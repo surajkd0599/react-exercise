@@ -1,15 +1,15 @@
-//import {circle, rectangle, tsaCylinder} from './area.js'
+import {circle, rectangle, tsaCylinder} from './area.js'
+import {addIntoArray,getTotal,arrayOfSec,findFlexItems,mapOfTimeStrings} from './Q2'
 
-//console.log(circle(5))
 //Q1. Given this array: `[3,62,234,7,23,74,23,76,92]`, Using arrow function, create an array of the numbers greater than `70`.
 /*let array = [3,62,234,7,23,74,23,76,92];
 console.log(array.filter((n) => n > 70));
 */
 
 
-/*Q2.
+//Q2.
 
-<ul>
+/*<ul>
   <li data-time="5:17">Flexbox Video</li>
   <li data-time="8:22">Flexbox Video</li>
   <li data-time="3:34">Redux Video</li>
@@ -31,15 +31,25 @@ console.log(array.filter((n) => n > 70));
   <li data-time="5:59">Redux Video</li>
   <li data-time="3:31">Flexbox Video</li>
 </ul>
+*/
 
 
+/*
 a. Select all the list items on the page and convert to array.
 b. Filter for only the elements that contain the word 'flexbox'
 c. Map down to a list of time strings
 d. Map to an array of seconds
 e. Reduce to get total using .filter and .map
 */
- 
+
+/*
+console.log(addIntoArray())
+console.log(findFlexItems())
+console.log(mapOfTimeStrings())
+console.log(arrayOfSec())
+console.log(getTotal())
+*/
+
 
 /*Q3. Create a markup template using string literal
 
@@ -181,11 +191,11 @@ console.log(a)
 //Q8. Import a module containing the constants and method for calculating area of circle, rectangle, cylinder.
 
 
-//console.log(circle(5));
+console.log(circle(5));
 
-//console.log(rectangle(2,5));
+console.log(rectangle(2,5));
 
-//console.log(tsaCylinder(5,6))
+console.log(tsaCylinder(5,6))
 
 //Q9. Import a module for filtering unique elements in an array.
 //import filtering from './filtering.js'
@@ -195,14 +205,15 @@ console.log(a)
 //console.log(filtering(array2));
 
 //Q10. Write a program to flatten a nested array to single level using arrow functions.
-var arrays = [["$6"], ["$12"], ["$25"], ["$25"], ["$18"], ["$22"], ["$10"], ["$0"], ["$15"],["$3"], ["$75"], ["$5"], ["$100"], ["$7"], ["$3"], ["$75"], ["$5"]];
+/*var arrays = [["$6"], ["$12"], ["$25"], ["$25"], ["$18"], ["$22"], ["$10"], ["$0"], ["$15"],["$3"], ["$75"], ["$5"], ["$100"], ["$7"], ["$3"], ["$75"], ["$5"]];
 
 arrays = arrays.reduce((a, b) => a.concat(b), []);
 console.log(arrays)
+*/
 
 //Q11. Implement a singly linked list in es6 and implement addFirst() addLast(), length(), getFirst(), getLast(). (without using array)
 
-class Node{
+/*class Node{
   constructor(data, next = null){
       this.data = data,
       this.next = next
@@ -244,11 +255,13 @@ LinkedList.prototype.addLast = function(data){
      tail.next = newNode;
      return this.head;
   }
+  */
 
 //for lenght
 
 //Q12. Implement Map and Set using Es6
 
+/*
 // set 
 let setVar = new Set();
 setVar.add(4);
@@ -270,5 +283,6 @@ map.set(key2,"object key");
 map.set(key3,"function mapping")
 map.set("dif","div");
 console.log(map);
+*/
 
 //Q13. Implementation of stack (using linked list)

@@ -7,7 +7,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        port: 3000,
+        port: 8080,
         contentBase: path.resolve(__dirname,'build')
     },
     module: {
