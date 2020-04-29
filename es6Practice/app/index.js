@@ -195,6 +195,10 @@ console.log(a)
 //console.log(filtering(array2));
 
 //Q10. Write a program to flatten a nested array to single level using arrow functions.
+var arrays = [["$6"], ["$12"], ["$25"], ["$25"], ["$18"], ["$22"], ["$10"], ["$0"], ["$15"],["$3"], ["$75"], ["$5"], ["$100"], ["$7"], ["$3"], ["$75"], ["$5"]];
+
+arrays = arrays.reduce((a, b) => a.concat(b), []);
+console.log(arrays)
 
 //Q11. Implement a singly linked list in es6 and implement addFirst() addLast(), length(), getFirst(), getLast(). (without using array)
 
