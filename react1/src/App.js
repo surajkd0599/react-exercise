@@ -3,6 +3,7 @@ import Fruit from "./Fruit/Fruit";
 
 class App extends Component {
   state = {
+    count: 0,
     inputValue: "",
     fruits: [],
   };
@@ -29,13 +30,14 @@ class App extends Component {
     let fruits = this.state.fruits;
     let data = this.state.inputValue.split("-");
     const fruitQuantity = {
-      key: Math.floor(Math.random() * 30),
+      key: this.state.count + 1,
       name: data[0],
       quantity: data[1],
     };
 
     fruits.push(fruitQuantity);
     this.setState({
+      count: this.state.count + 1,
       inputValue: "",
       fruits: fruits,
     });
@@ -61,16 +63,18 @@ class App extends Component {
 
     return (
       <form>
-        <input
-          type="text"
-          onChange={(event) => this.onInputChange(event)}
-          value={this.state.inputValue}
-        />
-        <br />
-        <button type="submit" onClick={(e) => this.addItem(e)}>
-          SUBMIT
-        </button>
-        {fruits}
+        <div>
+          <input
+            type="text"
+            onChange={(event) => this.onInputChange(event)}
+            value={this.state.inputValue}
+          />
+          <br />
+          <button type="submit" onClick={(e) => this.addItem(e)}>
+            SUBMIT
+          </button>
+          {fruits}
+        </div>
       </form>
     );
   }

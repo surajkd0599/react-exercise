@@ -5,9 +5,9 @@ const fruit = (props) => {
   return (
     <tbody>
       <tr>
-        <td className="all"> {props.name} </td>
-        <td className="all"> {props.quantity} </td>
-        <td className="all" onClick={props.click}>
+        <td> {props.name} </td>
+        <td> {props.quantity} </td>
+        <td onClick={props.click}>
           delete
         </td>
       </tr>

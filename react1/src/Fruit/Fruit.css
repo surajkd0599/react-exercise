@@ -1,5 +1,5 @@
-.all {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 35%;
+td {
+  border: 1px solid black;
+  width: 35%;
+  text-align: left;
 }
