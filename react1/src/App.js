@@ -29,18 +29,23 @@ class App extends Component {
     e.preventDefault();
     let fruits = this.state.fruits;
     let data = this.state.inputValue.split("-");
-    const fruitQuantity = {
-      key: this.state.count + 1,
-      name: data[0],
-      quantity: data[1],
-    };
 
-    fruits.push(fruitQuantity);
-    this.setState({
-      count: this.state.count + 1,
-      inputValue: "",
-      fruits: fruits,
-    });
+    if (data[0] != "" && data[1] != "") {
+      const fruitQuantity = {
+        key: this.state.count + 1,
+        name: data[0],
+        quantity: data[1],
+      };
+
+      fruits.push(fruitQuantity);
+      this.setState({
+        count: this.state.count + 1,
+        inputValue: "",
+        fruits: fruits,
+      });
+    } else {
+      alert("Values cannot be null and must be entered as shown in example");
+    }
   }
 
   render() {
@@ -66,6 +71,7 @@ class App extends Component {
         <div>
           <input
             type="text"
+            placeholder="Enter Fruit eg.abcd-10"
             onChange={(event) => this.onInputChange(event)}
             value={this.state.inputValue}
           />
