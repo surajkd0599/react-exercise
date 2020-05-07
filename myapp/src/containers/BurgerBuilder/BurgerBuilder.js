@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Aux from "../../hoc/aux";
+import Aux from "../../hoc/Aux/aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
 const INGREDIENT_PRICES = {
   salad: 1,
@@ -15,10 +17,10 @@ class BurgerBuilder extends Component {
     ingredients: { salad: 0, bacon: 0, meat: 0, cheese: 0 },
     totalPrice: 5,
     purchasable: false,
+    purchasing: false,
   };
 
   updatePurchasable(ingredients) {
-    console.log(Object.keys(ingredients));
     const sum = Object.keys(ingredients)
       .map((igKey) => {
         return ingredients[igKey];
@@ -58,6 +60,18 @@ class BurgerBuilder extends Component {
     this.updatePurchasable(updatedIngredients);
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
+  cancelPurchaseHandler = () => {
+    this.setState({ purchasing: false });
+  };
+
+  purchaseContinued = () => {
+    alert("You continued!");
+  };
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients,
@@ -68,6 +82,17 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
+        <Modal
+          show={this.state.purchasing}
+          modalClosed={this.cancelPurchaseHandler}
+        >
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            purchaseCancelled={this.cancelPurchaseHandler}
+            purchaseContinued={this.purchaseContinued}
+            price={this.state.totalPrice}
+          />
+        </Modal>
         <Burger ingredients={this.state.ingredients} />
         <div>
           <BuildControls
@@ -76,6 +101,7 @@ class BurgerBuilder extends Component {
             disabled={disabledInfo}
             purchasable={this.state.purchasable}
             price={this.state.totalPrice}
+            ordered={this.purchaseHandler}
           />
         </div>
       </Aux>
